@@ -11,11 +11,8 @@
     name: UTC
 
 - name: set hostname in /etc/hosts
-  lineinfile:
+  template:
+    src: hosts.j2
     dest: /etc/hosts
-    regexp: ".*{{ item }}$"
-    line: "{{ hostvars[item].ansible_default_ipv4.address }} {{ hostvars[item].ansible_fqdn }} {{ hostvars[item].ansible_hostname }}"
-    state: present
     backup: true
   when: hostvars[item].ansible_default_ipv4.address is defined
-  with_items: "{{ groups['all'] }}"
