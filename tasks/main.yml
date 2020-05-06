@@ -2,7 +2,7 @@
 - name: set hostnamectl
   hostname:
     name: "{{ inventory_hostname }}"
-  notify: restart_hostname_service
+  notify: restart_hostnamed
 
 - meta: flush_handlers
 

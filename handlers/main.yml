@@ -1,5 +1,5 @@
 ---
-- name: restart_hostname_service
+- name: restart_hostnamed
   systemd:
     name: systemd-hostnamed
     state: restarted
