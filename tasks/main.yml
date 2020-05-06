@@ -15,4 +15,3 @@
     src: hosts.j2
     dest: /etc/hosts
     backup: true
-  when: hostvars[item].ansible_default_ipv4.address is defined
