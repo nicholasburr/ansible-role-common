@@ -15,3 +15,14 @@
     src: hosts.j2
     dest: /etc/hosts
     backup: true
+
+- name: install firewalld
+  pakcage:
+    name: firewalld
+    state: present
+
+- name: configure firewalld service
+  systemd:
+    name: firewalld
+    state: started
+    enabled: true
