@@ -17,7 +17,7 @@
     backup: true
 
 - name: install firewalld
-  pakcage:
+  package:
     name: firewalld
     state: present
 
